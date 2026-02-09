@@ -2,14 +2,13 @@ import { LucideFolder, LucideMail } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Field, FieldLabel } from "@/components/ui/field";
 import { Textarea } from "@/components/ui/textarea";
+import { Project } from "../../../app/generated/prisma/client";
 
 type ProjectDetailProps = {
-  // ticket: Ticket;
-  isDetail?: boolean;
+  project: Project;
 };
 
-// const TicketItem = ({ ticket, isDetail }: TicketItemProps) => {
-const ProjectDetailPage = () => {
+const ProjectDetailPage = ({ project }: ProjectDetailProps) => {
   return (
     <div className="p-8">
       <Card>
