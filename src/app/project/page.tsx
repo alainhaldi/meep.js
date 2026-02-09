@@ -3,6 +3,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Field, FieldLabel } from "@/components/ui/field";
 import { Textarea } from "@/components/ui/textarea";
 
+type ProjectDetailProps = {
+  // ticket: Ticket;
+  isDetail?: boolean;
+};
+
+// const TicketItem = ({ ticket, isDetail }: TicketItemProps) => {
 const ProjectDetailPage = () => {
   return (
     <div className="p-8">
