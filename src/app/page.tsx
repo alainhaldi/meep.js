@@ -1,13 +1,12 @@
 import AppHeader from "@/components/header";
+import AppProjectCard from "@/features/project/project-card";
 
 export default function Home() {
   return (
     <div>
       <AppHeader></AppHeader>
-      <div className="flex h-screen items-center justify-center">
-        <p className="text-2xl">
-          This will soon become a project and task tracker app 🗂️
-        </p>
+      <div className="p-8">
+        <AppProjectCard></AppProjectCard>
       </div>
     </div>
   );
