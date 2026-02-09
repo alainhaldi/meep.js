@@ -1,4 +1,6 @@
+import { LucideLoader } from "lucide-react";
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -19,7 +21,10 @@ const AppProjectCard = () => {
       </CardHeader>
       <CardContent>
         <div className="flex gap-2 items-center justify-between">
-          <p>In progress</p>
+          <Badge variant="secondary">
+            <LucideLoader />
+            <p>In progress</p>
+          </Badge>
           <Button variant={"outline"}>
             <Link href="/detail">View details</Link>
           </Button>
