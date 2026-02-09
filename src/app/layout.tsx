@@ -30,7 +30,6 @@ export default function RootLayout({
       >
         <AppHeader></AppHeader>
         {children}
-        <Analytics />
       </body>
     </html>
   );
