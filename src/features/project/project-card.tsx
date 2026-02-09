@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -16,7 +18,12 @@ const AppProjectCard = () => {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <p>In progress</p>
+        <div className="flex gap-2 items-center">
+          <p>In progress</p>
+          <Button variant={"outline"}>
+            <Link href="/detail">View details</Link>
+          </Button>
+        </div>
       </CardContent>
     </Card>
   );
