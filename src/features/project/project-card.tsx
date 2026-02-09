@@ -10,7 +10,7 @@ import {
 
 const AppProjectCard = () => {
   return (
-    <Card>
+    <Card className="flex-1 max-w-3xl">
       <CardHeader>
         <CardTitle>Monster Inc.</CardTitle>
         <CardDescription>
@@ -18,7 +18,7 @@ const AppProjectCard = () => {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center justify-between">
           <p>In progress</p>
           <Button variant={"outline"}>
             <Link href="/detail">View details</Link>

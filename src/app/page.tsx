@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <AppHeader></AppHeader>
-      <div className="p-8">
+      <div className="p-8 flex justify-center">
         <AppProjectCard></AppProjectCard>
       </div>
     </div>
