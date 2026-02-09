@@ -26,7 +26,7 @@ const AppProjectCard = () => {
             <p>In progress</p>
           </Badge>
           <Button variant={"outline"}>
-            <Link href="/detail">View details</Link>
+            <Link href="/project">View details</Link>
           </Button>
         </div>
       </CardContent>
