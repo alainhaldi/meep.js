@@ -1,5 +1,6 @@
 import { LucideLoader } from "lucide-react";
 import Link from "next/link";
+import { Project } from "@/app/generated/prisma/client";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,21 +11,37 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const AppProjectCard = () => {
+type ProjectCardProps = {
+  project: Project;
+};
+
+const AppProjectCard = ({ project }: ProjectCardProps) => {
+  const isDone = project.status == "DONE";
+  const isOnHold = project.status == "ON_HOLD";
+  const isInProgress = project.status == "IN_PROGRESS";
   return (
     <Card className="flex-1 max-w-3xl">
       <CardHeader>
-        <CardTitle>Monster Inc.</CardTitle>
-        <CardDescription>
-          Improve the overall security measurements, to avoid human contact.
-        </CardDescription>
+        <CardTitle>{project.title}</CardTitle>
+        <CardDescription>{project.description}</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="flex gap-2 items-center justify-between">
-          <Badge variant="secondary">
-            <LucideLoader />
-            <p>In progress</p>
-          </Badge>
+          {isDone && (
+            <Badge className="bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300">
+              Done
+            </Badge>
+          )}
+          {isInProgress && (
+            <Badge className="bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-300">
+              In Progress
+            </Badge>
+          )}
+          {isOnHold && (
+            <Badge className="bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-300">
+              On Hold
+            </Badge>
+          )}
           <Button variant={"outline"}>
             <Link href="/project">View details</Link>
           </Button>
