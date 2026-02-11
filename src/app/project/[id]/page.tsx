@@ -2,20 +2,29 @@ import { LucideFolder, LucideMail } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Field, FieldLabel } from "@/components/ui/field";
 import { Textarea } from "@/components/ui/textarea";
-import { Project } from "../generated/prisma/client";
+import { getProject } from "@/features/project/queries/get-project";
 
 type ProjectDetailProps = {
-  project: Project;
+  params: {
+    projectId: string;
+  };
 };
 
-const ProjectDetailPage = ({ project }: ProjectDetailProps) => {
+const ProjectDetailPage = async ({ params }: ProjectDetailProps) => {
+  const { projectId } = await params;
+  const project = await getProject(projectId);
+
+  // if (!ticket) {
+  //   notFound();
+  // }
+
   return (
     <div className="p-8">
       <Card>
         <CardContent>
           <div className="flex gap-24">
             <div className="flex flex-col gap-2">
-              <p>2130005</p>
+              <p>{project?.projectNumber}</p>
               <p>30/40</p>
               <p>Due to 15.04.2026</p>
             </div>
