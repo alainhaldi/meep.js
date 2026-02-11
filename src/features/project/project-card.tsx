@@ -14,6 +14,7 @@ type ProjectCardProps = {
   project: Project;
 };
 
+// TODO: Extract path to path.ts
 const AppProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <Card className="flex-1 max-w-3xl">
@@ -25,7 +26,7 @@ const AppProjectCard = ({ project }: ProjectCardProps) => {
         <div className="flex gap-2 items-center justify-between">
           <StatusBadge status={project.status}></StatusBadge>
           <Button asChild variant={"outline"}>
-            <Link href="/project">View details</Link>
+            <Link href={`/project/${project.id}`}>View details</Link>
           </Button>
         </div>
       </CardContent>

@@ -1,4 +1,5 @@
 import { LucideFolder, LucideMail } from "lucide-react";
+import { notFound } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Field, FieldLabel } from "@/components/ui/field";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,9 +15,10 @@ const ProjectDetailPage = async ({ params }: ProjectDetailProps) => {
   const { projectId } = await params;
   const project = await getProject(projectId);
 
-  // if (!ticket) {
-  //   notFound();
-  // }
+  // Needed to make sure project cant be empty
+  if (!project) {
+    notFound();
+  }
 
   return (
     <div className="p-8">
@@ -24,7 +26,7 @@ const ProjectDetailPage = async ({ params }: ProjectDetailProps) => {
         <CardContent>
           <div className="flex gap-24">
             <div className="flex flex-col gap-2">
-              <p>{project?.projectNumber}</p>
+              <p>{project.projectNumber}</p>
               <p>30/40</p>
               <p>Due to 15.04.2026</p>
             </div>
