@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { projectPath } from "@/path";
-import StatusBadge from "../status-badge";
+import StatusBadge from "../../status-badge";
 
 type ProjectCardProps = {
   project: Project;
