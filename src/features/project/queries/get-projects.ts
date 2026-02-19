@@ -5,7 +5,7 @@ export const getProjects = async () => {
     prisma.project.findMany({
       orderBy: { title: "desc" },
     }),
-    new Promise((resolve) => setTimeout(resolve, 5000)),
+    new Promise((resolve) => setTimeout(resolve, 2000)),
   ]);
 
   return projects;
