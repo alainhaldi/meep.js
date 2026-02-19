@@ -42,8 +42,8 @@ const AppProjectCard = ({ project }: ProjectCardProps) => {
         <div className="flex gap-2 items-center justify-between">
           <StatusBadge status={project.status}></StatusBadge>
           <div className="flex gap-x-2">
-            <div>{deleteButton}</div>
             <div>{detailsButton}</div>
+            <div>{deleteButton}</div>
           </div>
         </div>
       </CardContent>
