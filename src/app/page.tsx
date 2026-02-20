@@ -6,7 +6,7 @@ import ProjectsBar from "@/features/project/components/projects-bar";
 export default async function Home() {
   return (
     // TODO: Add Custom Header
-    <div className="bg-amber-50 ">
+    <div className="flex flex-col gap-y-4">
       <ProjectsBar></ProjectsBar>
       <Suspense fallback={<Spinner />}>
         <ProjectList></ProjectList>
