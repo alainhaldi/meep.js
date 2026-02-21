@@ -27,17 +27,17 @@ const ProjectDetailPage = async ({ params }: ProjectDetailProps) => {
           <div className="flex gap-24">
             <div className="flex flex-col gap-2">
               <p>{project.projectNumber}</p>
-              <p>30/40</p>
+              <p>{`${project.budgetAt}/${project.budgetCap}`}</p>
               <p>Due to 15.04.2026</p>
             </div>
             <div className="flex flex-col gap-2">
               <div className="flex gap-1 items-center">
                 <LucideFolder size={16} />
-                <p>Documents</p>
+                <p>{project.documentLink}</p>
               </div>
               <div className="flex gap-1 items-center">
                 <LucideMail size={16} />
-                <p>Henry J. Waternoose III</p>
+                <p>{project.contactEmail}</p>
               </div>
             </div>
             <div className="flex flex-1 gap-12">
