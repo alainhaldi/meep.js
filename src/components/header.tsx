@@ -19,13 +19,17 @@ const AppHeader = ({ isHomeScreen }: AppHeaderProps) => {
   );
 
   return (
-    <div className="sticky top-0 z-50 h-12 flex items-center justify-between px-4 border-b backdrop-blur-xs">
-      {firstHeaderElement}
-      <div className="flex gap-2">
+    <div className="sticky top-0 z-50 h-12 flex flex-row items-center px-4 border-b backdrop-blur-xs">
+      <div className="flex-1">{firstHeaderElement}</div>
+
+      <div className="flex gap-2 flex-1 justify-center">
         <LucideClipboardList className="h-8" />
         <p className="text-2xl font-bold">Meep</p>
       </div>
-      <ThemeSwitcher></ThemeSwitcher>
+
+      <div className="flex flex-1 justify-end">
+        <ThemeSwitcher></ThemeSwitcher>
+      </div>
     </div>
   );
 };
