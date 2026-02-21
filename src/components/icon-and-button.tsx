@@ -1,10 +1,10 @@
-import { LucidePackagePlus } from "lucide-react";
+import { VariantProps } from "class-variance-authority";
 import { Route } from "next";
 import Link from "next/link";
 import { Button, buttonVariants } from "./ui/button";
 
 type IconAndButtonProps = {
-  buttonVariant?: typeof buttonVariants.arguments;
+  buttonVariant?: VariantProps<typeof buttonVariants>["variant"];
   href: Route;
   icon: React.ReactNode;
   label: string;
