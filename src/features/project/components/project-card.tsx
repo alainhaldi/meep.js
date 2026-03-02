@@ -1,4 +1,4 @@
-import { LucideTrash } from "lucide-react";
+import { LucideSquarePen, LucideTrash } from "lucide-react";
 import Link from "next/link";
 import { Project } from "@/app/generated/prisma/client";
 import { Button } from "@/components/ui/button";
@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { projectPath } from "@/path";
+import { newProjectPath, projectPath } from "@/path";
 import StatusBadge from "../../status-badge";
 import { deleteProject } from "../actions/delete-project";
 
@@ -32,6 +32,14 @@ const AppProjectCard = ({ project }: ProjectCardProps) => {
     </Button>
   );
 
+  const editButton = (
+    <Button variant="outline" size="icon">
+      <Link href={newProjectPath()}>
+        <LucideSquarePen className="h-4 w-4" />
+      </Link>
+    </Button>
+  );
+
   return (
     <Card className="flex-1 max-w-3xl">
       <CardHeader>
@@ -43,6 +51,7 @@ const AppProjectCard = ({ project }: ProjectCardProps) => {
           <StatusBadge status={project.status}></StatusBadge>
           <div className="flex gap-x-2">
             <div>{detailsButton}</div>
+            <div>{editButton}</div>
             <div>{deleteButton}</div>
           </div>
         </div>
