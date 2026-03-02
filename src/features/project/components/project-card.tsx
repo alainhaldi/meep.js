@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { newProjectPath, projectPath } from "@/path";
+import { editProjectPath, newProjectPath, projectPath } from "@/path";
 import StatusBadge from "../../status-badge";
 import { deleteProject } from "../actions/delete-project";
 
@@ -34,7 +34,7 @@ const AppProjectCard = ({ project }: ProjectCardProps) => {
 
   const editButton = (
     <Button variant="outline" size="icon">
-      <Link href={newProjectPath()}>
+      <Link href={editProjectPath(project.id)}>
         <LucideSquarePen className="h-4 w-4" />
       </Link>
     </Button>
