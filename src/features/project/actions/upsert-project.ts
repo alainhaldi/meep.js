@@ -56,10 +56,9 @@ export const upsertProject = async (
   if (id) {
     await setCookieByKey("toast", "Ticket edited");
     redirect(projectPath(id));
-  } else {
-    redirect(projectsPath());
   }
 
-  // Todo: Fix issue
-  return toActionState("SUCCESS", "Ticket created");
+  // return toActionState("SUCCESS", "Ticket created");
+  await setCookieByKey("toast", "Ticket created");
+  redirect(projectsPath());
 };
