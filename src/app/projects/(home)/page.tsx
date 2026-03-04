@@ -7,14 +7,11 @@ import ProjectsBar from "@/features/project/components/projects-bar";
 export default async function ProjectsPage() {
   console.log("> Loaded Projectpage");
   return (
-    <>
-      <div className="flex flex-col gap-y-4">
-        <ProjectsBar></ProjectsBar>
-        <Suspense fallback={<Spinner />}>
-          <ProjectList></ProjectList>
-        </Suspense>
-      </div>
-      <RedirectToast></RedirectToast>
-    </>
+    <div className="flex flex-col gap-y-4">
+      <ProjectsBar></ProjectsBar>
+      <Suspense fallback={<Spinner />}>
+        <ProjectList></ProjectList>
+      </Suspense>
+    </div>
   );
 }

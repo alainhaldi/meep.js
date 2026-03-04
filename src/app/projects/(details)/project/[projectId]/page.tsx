@@ -22,50 +22,47 @@ const ProjectDetailPage = async ({ params }: ProjectDetailProps) => {
   }
 
   return (
-    <>
-      <div className="p-8">
-        <Card>
-          <CardContent>
-            <div className="flex gap-24">
-              <div className="flex flex-col gap-2">
-                <p>{project.projectNumber}</p>
-                <p>{`${project.budgetAt}/${project.budgetCap}`}</p>
-                <p>Due to 15.04.2026</p>
+    <div className="p-8">
+      <Card>
+        <CardContent>
+          <div className="flex gap-24">
+            <div className="flex flex-col gap-2">
+              <p>{project.projectNumber}</p>
+              <p>{`${project.budgetAt}/${project.budgetCap}`}</p>
+              <p>Due to 15.04.2026</p>
+            </div>
+            <div className="flex flex-col gap-2">
+              <div className="flex gap-1 items-center">
+                <LucideFolder size={16} />
+                <p>{project.documentLink}</p>
               </div>
-              <div className="flex flex-col gap-2">
-                <div className="flex gap-1 items-center">
-                  <LucideFolder size={16} />
-                  <p>{project.documentLink}</p>
-                </div>
-                <div className="flex gap-1 items-center">
-                  <LucideMail size={16} />
-                  <p>{project.contactEmail}</p>
-                </div>
-              </div>
-              <div className="flex flex-1 gap-12">
-                <Field>
-                  <FieldLabel htmlFor="textarea-message">
-                    Project status
-                  </FieldLabel>
-                  <Textarea
-                    id="textarea-message"
-                    placeholder="Describe the current project status."
-                  />
-                </Field>
-                <Field>
-                  <FieldLabel htmlFor="textarea-message">Next steps</FieldLabel>
-                  <Textarea
-                    id="textarea-message"
-                    placeholder="Describe the next steps."
-                  />
-                </Field>
+              <div className="flex gap-1 items-center">
+                <LucideMail size={16} />
+                <p>{project.contactEmail}</p>
               </div>
             </div>
-          </CardContent>
-        </Card>
-      </div>
-      <RedirectToast></RedirectToast>
-    </>
+            <div className="flex flex-1 gap-12">
+              <Field>
+                <FieldLabel htmlFor="textarea-message">
+                  Project status
+                </FieldLabel>
+                <Textarea
+                  id="textarea-message"
+                  placeholder="Describe the current project status."
+                />
+              </Field>
+              <Field>
+                <FieldLabel htmlFor="textarea-message">Next steps</FieldLabel>
+                <Textarea
+                  id="textarea-message"
+                  placeholder="Describe the next steps."
+                />
+              </Field>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
   );
 };
 
