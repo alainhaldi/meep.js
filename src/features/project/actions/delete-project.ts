@@ -1,6 +1,8 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { setCookieByKey } from "@/actions/cookies";
 import prisma from "@/lib/prisma";
 import { projectsPath } from "@/path";
 
@@ -10,5 +12,7 @@ export const deleteProject = async (id: string) => {
       id,
     },
   });
-  redirect(projectsPath());
+  revalidatePath(projectsPath());
+  // await setCookieByKey("toast", "Ticket deleted");
+  // redirect(projectsPath());
 };

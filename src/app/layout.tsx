@@ -29,8 +29,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* <Toaster expand /> */}
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <main>
+            {children}
+            <Toaster expand />
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

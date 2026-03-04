@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import * as z from "zod/v4";
+import { setCookieByKey } from "@/actions/cookies";
 import {
   ActionState,
   fromErrorToActionState,
@@ -50,11 +51,15 @@ export const upsertProject = async (
     return fromErrorToActionState(error, formData);
   }
 
+  revalidatePath(projectsPath());
+
   if (id) {
+    await setCookieByKey("toast", "Ticket edited");
     redirect(projectPath(id));
   } else {
     redirect(projectsPath());
   }
 
+  // Todo: Fix issue
   return toActionState("SUCCESS", "Ticket created");
 };
