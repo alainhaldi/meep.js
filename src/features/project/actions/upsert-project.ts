@@ -54,11 +54,11 @@ export const upsertProject = async (
   revalidatePath(projectsPath());
 
   if (id) {
-    await setCookieByKey("toast", "Ticket edited");
+    await setCookieByKey("toast", "Project edited");
     redirect(projectPath(id));
   }
 
   // return toActionState("SUCCESS", "Ticket created");
-  await setCookieByKey("toast", "Ticket created");
+  await setCookieByKey("toast", "Project created");
   redirect(projectsPath());
 };
